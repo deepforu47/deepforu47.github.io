@@ -1,3 +1,39 @@
+# Site Settings
+title: Kuldeep Sharma
+description: Personal blog covering software engineering, artificial intelligence, and technology.
+url: "https://deepforu47.github.io"
+baseurl: ""
+
+# Author Details
+author:
+  name: Kuldeep Sharma
+  email: deepforu47@users.noreply.github.com
+  github: deepforu47
+  bio: "Software Engineer & AI Enthusiast exploring modern software architecture, deep learning, and open-source."
+
+# Theme
 theme: jekyll-theme-cayman
-# title: Kuldeep Sharma
-# description: Welcome to my website
+
+# Permalinks structure for blog posts
+permalink: /posts/:year/:month/:day/:title/
+
+# Plugins supported by GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Pagination settings
+paginate: 5
+paginate_path: "/page:num/"
+
+# Markdown and Syntax Highlighting
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false

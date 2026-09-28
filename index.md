@@ -1,7 +1,6 @@
 ---
-layout: default
+layout: home
 title: Home
 ---
 
-# Kuldeep Sharma
-Welcome to my website!
+Welcome to my personal tech blog! Here I document my work, technical tutorials, and insights across **Artificial Intelligence**, **software engineering**, and **open-source systems**.

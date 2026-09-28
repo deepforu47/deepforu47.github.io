@@ -2,13 +2,74 @@
 layout: default
 ---
 
-<small>{{ page.date | date: "%-d %B %Y" }}</small>
-<h1>{{ page.title }}</h1>
+<article class="post-single">
+  <div class="post-nav-back">
+    <a href="{{ "/" | relative_url }}" class="back-link">&larr; Back to articles</a>
+  </div>
 
-<p class="view">by {{ page.author | default: site.author }}</p>
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}" class="post-date">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </time>
+      <span class="meta-separator">&bull;</span>
+      <span class="reading-time">
+        {% assign words = page.content | number_of_words %}
+        {% if words < 360 %}
+          1 min read
+        {% else %}
+          {{ words | divided_by: 180 }} min read
+        {% endif %}
+      </span>
+      {% if page.author or site.author %}
+        <span class="meta-separator">&bull;</span>
+        <span class="post-author">By {{ page.author | default: site.author.name | default: site.author }}</span>
+      {% endif %}
+    </div>
 
-{{content}}
+    <h1 class="post-title">{{ page.title }}</h1>
 
-{% if page.tags %}
-  <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
-{% endif %}
+    {% if page.tags and page.tags.size > 0 %}
+      <div class="post-tags">
+        {% for tag in page.tags %}
+          <span class="tag-badge">#{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="post-body">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <div class="author-card">
+      <div class="author-avatar">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </div>
+      <div class="author-info">
+        <h4 class="author-name">{{ page.author | default: site.author.name | default: site.author }}</h4>
+        <p class="author-bio">{{ site.author.bio | default: "Software Engineer & AI Enthusiast" }}</p>
+        <a href="https://github.com/{{ site.author.github | default: 'deepforu47' }}" class="author-link" target="_blank" rel="noopener noreferrer">View GitHub Profile &rarr;</a>
+      </div>
+    </div>
+
+    <nav class="post-pagination-nav" aria-label="Adjacent Posts">
+      <div class="post-nav-col prev-col">
+        {% if page.previous %}
+          <span class="nav-direction">&larr; Previous Article</span>
+          <a href="{{ page.previous.url | relative_url }}" class="nav-post-title">{{ page.previous.title }}</a>
+        {% endif %}
+      </div>
+      <div class="post-nav-col next-col">
+        {% if page.next %}
+          <span class="nav-direction">Next Article &rarr;</span>
+          <a href="{{ page.next.url | relative_url }}" class="nav-post-title">{{ page.next.title }}</a>
+        {% endif %}
+      </div>
+    </nav>
+  </footer>
+</article>

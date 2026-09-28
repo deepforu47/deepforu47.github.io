@@ -1,0 +1,85 @@
+---
+layout: default
+---
+
+{% if content and content != "" %}
+  <section class="home-intro">
+    {{ content }}
+  </section>
+{% endif %}
+
+<section id="latest-posts" class="posts-section">
+  <div class="section-header">
+    <h2 class="section-title">Latest Articles</h2>
+    <a href="{{ "/archive/" | relative_url }}" class="view-all-link">Browse all &rarr;</a>
+  </div>
+
+  {% assign posts = paginator.posts | default: site.posts %}
+  {% if posts and posts.size > 0 %}
+    <div class="post-feed">
+      {% for post in posts %}
+        <article class="post-card">
+          <div class="post-card-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">
+              {{ post.date | date: "%B %-d, %Y" }}
+            </time>
+            <span class="meta-separator">&bull;</span>
+            <span class="reading-time">
+              {% assign words = post.content | number_of_words %}
+              {% if words < 360 %}
+                1 min read
+              {% else %}
+                {{ words | divided_by: 180 }} min read
+              {% endif %}
+            </span>
+          </div>
+
+          <h3 class="post-card-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+
+          {% if post.excerpt %}
+            <p class="post-card-excerpt">
+              {{ post.excerpt | strip_html | truncatewords: 35 }}
+            </p>
+          {% endif %}
+
+          <div class="post-card-footer">
+            {% if post.tags and post.tags.size > 0 %}
+              <div class="post-tags">
+                {% for tag in post.tags %}
+                  <span class="tag-badge">#{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <a href="{{ post.url | relative_url }}" class="read-more-link">Read article &rarr;</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    {% if paginator and paginator.total_pages > 1 %}
+      <nav class="pagination" role="navigation" aria-label="Pagination">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-btn pagination-prev">&larr; Newer Posts</a>
+        {% else %}
+          <span class="pagination-btn pagination-disabled">&larr; Newer Posts</span>
+        {% endif %}
+
+        <span class="pagination-indicator">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-btn pagination-next">Older Posts &rarr;</a>
+        {% else %}
+          <span class="pagination-btn pagination-disabled">Older Posts &rarr;</span>
+        {% endif %}
+      </nav>
+    {% endif %}
+
+  {% else %}
+    <div class="empty-posts">
+      <h3>No posts published yet</h3>
+      <p>Articles added to the <code>_posts/</code> directory will automatically show up here.</p>
+    </div>
+  {% endif %}
+</section>
