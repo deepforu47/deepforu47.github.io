@@ -2,25 +2,31 @@
 layout: page
 title: About Me
 permalink: /about/
-description: Software Engineer & AI Enthusiast.
+description: Cloud & DevOps Architect exploring AI and modern software engineering.
 ---
 
-### Hello and Welcome! 👋
+### Hi, I'm Kuldeep Sharma 👋
 
-I'm **Kuldeep Sharma**, a software engineer passionate about machine learning, artificial intelligence, distributed systems, and modern web architectures.
+I am a **Cloud & DevOps Architect** based in the United Kingdom, specializing in multi-cloud infrastructure (AWS & Azure), platform engineering, and scalable distributed systems.
 
-### About This Blog
+### Core Focus Areas
 
-This blog is a personal platform where I document what I learn, experiment with new ideas, and break down complex technical concepts into approachable guides.
+- **Cloud & Infrastructure as Code**: AWS, Azure, Terraform, Cloud Architecture & Security.
+- **Kubernetes & Platforms**: Container orchestration, RBAC, CI/CD automation, and dynamic scaling.
+- **AI & Developer Tooling**: Exploring autonomous coding agents, LLM integrations, and modern developer workflows.
 
-Topics I focus on include:
-- **Artificial Intelligence & LLMs**: Agentic workflows, retrieval-augmented generation (RAG), model evaluations, and emerging AI tools.
-- **Software Engineering**: Clean architecture, system design, performance optimization, and reliable backend engineering.
-- **Developer Productivity & Tools**: Open-source projects, developer tools, and workflow automation.
+### Technical Writing & Sharing
 
-### Get in Touch
+I enjoy documenting hands-on engineering solutions. Some of my past technical articles and focus areas include:
+- **Terraform Getting Started Series**: Provisioning clustered web infrastructure on AWS with Terraform.
+- **Kubernetes RBAC**: Deep dive into role-based access control and security in Kubernetes clusters.
+- **CI/CD on Kubernetes**: Scaling and running dynamic build platforms in containerized environments.
+- **AI Agent Tooling**: Evaluating security and workflow isolation for autonomous developer agents.
 
+### Connect With Me
+
+- **LinkedIn**: [Kuldeep Sharma](https://www.linkedin.com/in/kuldeep-sharma-7b6aa617/)
 - **GitHub**: [@deepforu47](https://github.com/deepforu47)
-- **RSS Feed**: [Subscribe via RSS]({{ "/feed.xml" | relative_url }})
+- **RSS**: [Subscribe via RSS]({{ "/feed.xml" | relative_url }})
 
-Feel free to browse through the [Articles Archive]({{ "/archive/" | relative_url }}) or connect with me on GitHub!
+Feel free to explore the [Articles Archive]({{ "/archive/" | relative_url }}) or connect with me on LinkedIn!
