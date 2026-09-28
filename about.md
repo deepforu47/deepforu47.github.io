@@ -23,10 +23,11 @@ I enjoy documenting hands-on engineering solutions. Some of my past technical ar
 - **CI/CD on Kubernetes**: Scaling and running dynamic build platforms in containerized environments.
 - **AI Agent Tooling**: Evaluating security and workflow isolation for autonomous developer agents.
 
-### Connect With Me
+### Connect & Other Platforms
 
 - **LinkedIn**: [Kuldeep Sharma](https://www.linkedin.com/in/kuldeep-sharma-7b6aa617/)
 - **GitHub**: [@deepforu47](https://github.com/deepforu47)
+- **Older Blog**: [LinuxHelp4U](https://linuxhelp4u.blogspot.com/) (My earlier tech blog covering Linux administration and systems troubleshooting)
 - **RSS**: [Subscribe via RSS]({{ "/feed.xml" | relative_url }})
 
 Feel free to explore the [Articles Archive]({{ "/archive/" | relative_url }}) or connect with me on LinkedIn!
