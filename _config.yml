@@ -4,6 +4,4 @@
 # the repo. Unless a later match takes precedence,
 # @global-owner1 and Qglobal-owner2 will be requested for
 # review when someone opens a pull request.
-*
-@global-owner1 @global-owner2
 theme: jekyll-theme-minimal
